@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #define NAME_LENGTH 31  // 30 Chars + '\0'
 #define NUM_NAMES 101   // 100 names + ' '
@@ -30,8 +31,14 @@ int main(int argc, char* argv[]) {
 
   char buffer[NAME_LENGTH];
 
-  while (fgets(buffer, NAME_LENGTH, fp) != NULL) {
-    printf(buffer);
+  for (int i = 1; fgets(buffer, NAME_LENGTH, fp) != NULL; i++) {
+    buffer[strcspn(buffer, "\n")] = '\0';
+    // remove trailing newline character
+    if (strlen(buffer) < 1) {
+      fprintf(stderr, "Warning - Line %d is empty.\n", i);
+      continue;
+    }
+    // printf("Line %d: %s\n", i, buffer);
   }
 
   // discard line if empty (emmit warning)
