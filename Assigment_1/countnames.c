@@ -60,5 +60,14 @@ int main(int argc, char* argv[]) {
     }
   }
 
+  // print names and counts
+  for (int i = 0; i < NUM_NAMES; i++) {
+    if (counts[i] > 0) {
+      printf("%s: %d\n", names[i], counts[i]);
+    } else {
+      break;
+    }
+  }
+
   return 0;
 }
