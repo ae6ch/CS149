@@ -1,7 +1,7 @@
 /**
  * Description: Counts the number of times each line appears in the file.  Input can be a filename (first arg) or stdin.
  *              Names > 30 characters are truncated with a warning.  Empty lines are skipped with a warning.
- *              Output is a list of line contents and occurence counts.
+ *              Output is a list of line contents and occurrence counts.
  *              Output is to PID.err and PID.out for stderr and stdout, PID is the current process id
  * Author names: Steve Rubin 
  * Author emails: steven.rubin@sjsu.edu
